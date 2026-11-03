@@ -1,0 +1,21 @@
+# Shape-only example for Stage 0. These values do not define a physical simulator.
+system: fake_contract
+seed: 42
+n_runs: 3
+spec:
+  name: fake_contract_v1
+  state_names: [x, v]
+  state_units: [m, m/s]
+  param_names: [c, k, beta, omega]
+  ext_names: [F, cos_wt, sin_wt]
+  ctrl_names: [u_force]
+  ctrl_bounds: [[-0.5, 0.5]]
+  ctrl_rate_limit: [2.0]
+  Ts: 0.1
+  window: 64
+  horizon_s: 2.0
+  lyap_threshold: 0.01
+  undesirable: [chaotic]
+  notes:
+    synthetic: true
+    purpose: Stage 0 interface development
